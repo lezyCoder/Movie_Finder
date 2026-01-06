@@ -37,7 +37,7 @@ const App = () => {
           <Routes>
             <Route index path="/" element={<HomePage movies={movies} setFavourite={setFavourite} favourite={favourite} />} />
             <Route path="/movie/:id" element={< Detailspage />} />
-            <Route path='/favourite_movies' element={<FavouriteMovie />} />
+            <Route path='/favourite_movies' element={<FavouriteMovie  favourite={favourite}/>} />
           </Routes>
         </Layout>
         <Footer />
