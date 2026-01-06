@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer"
 import HomePage from "./components/Home/HomePage"
 import Detailspage from "./components/Details/Detailspage"
 import { useEffect, useState } from "react"
+import FavouriteMovie from './components/FavMovies/FavouriteMovie'
 const API_KEY = import.meta.env.VITE_OMDB_API_KEY
 
 
@@ -34,8 +35,9 @@ const App = () => {
         <Navbar movie={movie} setMovie={setMovie} handleSearch={handleSearch} favourite={favourite} />
         <Layout>
           <Routes>
-            <Route path="/" element={<HomePage movies={movies} setFavourite={setFavourite} favourite={favourite} />} />
-            <Route path="/movie/:id" element={<Detailspage />} />
+            <Route index path="/" element={<HomePage movies={movies} setFavourite={setFavourite} favourite={favourite} />} />
+            <Route path="/movie/:id" element={< Detailspage />} />
+            <Route path='/favourite_movies' element={<FavouriteMovie />} />
           </Routes>
         </Layout>
         <Footer />

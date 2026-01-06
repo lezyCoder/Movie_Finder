@@ -1,10 +1,16 @@
 import { IoSearchSharp } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ movie, setMovie, handleSearch, favourite }) => {
+  
+  const navigate =  useNavigate();
+
   const showFavourite = () => {
+    navigate("/favourite_movies")
     console.log(favourite);
   };
+
   return (
     <div>
       <nav>

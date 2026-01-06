@@ -1,7 +1,12 @@
 import { FaRegHeart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ movies, setFavourite, favourite }) => {
-  const handleFavourite = (movie) => {
+
+  const navigate = useNavigate();
+
+  const handleFavourite = (e,movie) => {
+       e.stopPropagation();
     if (favourite.some((fav) => fav.imdbID === movie.imdbID)) {
       alert("Already in favourites");
       return;
@@ -9,11 +14,16 @@ const MovieCard = ({ movies, setFavourite, favourite }) => {
     setFavourite((prev) => [...prev, movie]);
   };
 
+  const handleNavigate = ( e,id) => {
+    e.stopPropagation();
+    navigate(`/movie/:${id}`)
+  }
+  
   return (
-    <>  
+    <>
       {movies && movies.map((movie) => (
-        <div className="movie-card" key={movie.imdbID}>
-          <div className="fav-icon" onClick={() => handleFavourite(movie)}>
+        <div className="movie-card" key={movie.imdbID} onClick={(e) => handleNavigate(e,movie.imdbID)} >
+          <div className="fav-icon" onClick={(e) => handleFavourite(e,movie)}>
             <FaRegHeart />
           </div>
 
@@ -26,7 +36,7 @@ const MovieCard = ({ movies, setFavourite, favourite }) => {
 
           <div className="actions-btn">
             <button>Watch now</button>
-            <button>See More</button>
+            <button onClick={(e) => handleNavigate(e,movie.imdbID)}>See More</button>
           </div>
         </div>
       ))}
