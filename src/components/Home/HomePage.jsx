@@ -1,9 +1,11 @@
 import MovieCard from "../Movie/MovieCard"
 
-const HomePage = ({movies ,favourite , setFavourite}) => {
-//  console.log("Movie" , movies)
+const HomePage = ({ movies, favourite, setFavourite }) => {
+  //  console.log("Movie" , movies)
   return (
-    <div><MovieCard movies={movies} favourite={favourite} setFavourite={setFavourite}/></div>
+    <div className="home"><MovieCard movies={movies} favourite={favourite} setFavourite={setFavourite} /></div>
+
+      
   )
 }
 

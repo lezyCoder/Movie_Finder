@@ -26,7 +26,7 @@ const Navbar = ({ movie, setMovie, handleSearch, favourite }) => {
           </form>
         </div>
 
-        <div className="fav">
+        <div className="fav" onClick={showFavourite}>
           <FaRegHeart />
         </div>
       </nav>
