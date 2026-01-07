@@ -202,12 +202,50 @@ nav {
   font-size: 28px;
   color: #b20710;
 }
+
 .fav-page .movies {
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
   padding: 0 20px;
+}
+
+
+/* Details page */
+.details-page {
+  display: flex;
+  /* flex-direction: column; */
+  height: 100%;
+  /* align-items: center; */
+  width: 100%;
+  gap: 2%;
+}
+
+.show-details {
+  display: flex;
+  gap: 4%;
+  padding: 20px 10px;
+  width: 90%;
+}
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20%;
+}
+
+.details-page section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+.details-page section h3 {
+  color: #b20710;
+  margin: 20px;
 }
 
 /* Footer */

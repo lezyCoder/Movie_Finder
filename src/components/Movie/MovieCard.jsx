@@ -14,9 +14,9 @@ const MovieCard = ({ movies, setFavourite, favourite }) => {
     setFavourite((prev) => [...prev, movie]);
   };
 
-  const handleNavigate = ( e,id) => {
+  const handleNavigate = (e,movieID) => {
     e.stopPropagation();
-    navigate(`/movie/:${id}`)
+    navigate(`/movie/${movieID}`)
   }
   
   return (

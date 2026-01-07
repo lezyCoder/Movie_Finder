@@ -15,7 +15,6 @@ const App = () => {
   const [favourite, setFavourite] = useState([]);
 
 
-
   const handleSearch = async (movie, e) => {
     e.preventDefault();
     const response = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${movie}`)
@@ -35,8 +34,8 @@ const App = () => {
         <Navbar movie={movie} setMovie={setMovie} handleSearch={handleSearch} favourite={favourite} />
         <Layout>
           <Routes>
-            <Route index path="/" element={<HomePage movies={movies} setFavourite={setFavourite} favourite={favourite} />} />
-            <Route path="/movie/:id" element={< Detailspage />} />
+            <Route index element={<HomePage movies={movies} setFavourite={setFavourite} favourite={favourite} />} />
+            <Route path="/movie/:movieId" element={< Detailspage movies={movies} />} />
             <Route path='/favourite_movies' element={<FavouriteMovie  favourite={favourite}/>} />
           </Routes>
         </Layout>
