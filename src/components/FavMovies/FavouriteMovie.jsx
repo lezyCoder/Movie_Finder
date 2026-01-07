@@ -2,17 +2,20 @@
 import MovieCard from '../Movie/MovieCard'
 
 const FavouriteMovie = ({ favourite }) => {
+    console.log(favourite)
     return (
-        <div>
+        <div className='fav-page'>
 
-            <div>Favourite Movie</div>
-            {
-                favourite && favourite.map((index) => {
-                    return (
-                        <MovieCard movies={favourite} />
-                    )
-                })
-            }
+            <h1>Favourite Movie</h1>
+            <div className="movies">
+                {
+                    favourite && favourite.map((index) => {
+                        return (
+                            <MovieCard movies={favourite} />
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 }

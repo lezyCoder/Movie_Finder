@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   background: #0f0f0f;
   color: white;
 }
@@ -189,6 +189,27 @@ nav {
   background: #e50914;
 }
 
+/* Favourite page */
+
+.fav-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.fav-page h1 {
+  text-align: center;
+  font-size: 28px;
+  color: #b20710;
+}
+.fav-page .movies {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
 /* Footer */
 footer {
   background: #1a1a1a;
@@ -210,7 +231,7 @@ footer {
 
   .logo h1 {
     font-size: 24px;
-     display: none;
+    display: none;
   }
 
   .search {
@@ -246,7 +267,7 @@ footer {
 
   .logo h1 {
     font-size: 20px;
-     display: none;
+    display: none;
   }
 
   .search form {
