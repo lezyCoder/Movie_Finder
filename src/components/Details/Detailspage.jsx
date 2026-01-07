@@ -7,19 +7,17 @@ const Detailspage = ({ movies }) => {
   const movie = movies.find((movie) => movieId === movie.imdbID);
 
   // generating random Index
-  const randomIndex = () => {
-    const randomNumber = Math.floor(Math.random() * 9)
-    return randomNumber;
-  }
-  const randomNumber = randomIndex();
-  console.log("random" ,randomNumber)
+
+  const maxStart = Math.max(0, movies.length - 5);
+  const randomNumber = Math.floor(Math.random() * maxStart);
+  console.log("random", randomNumber)
   const similarMovies = movies
     .filter((movie) => movieId !== movie.imdbID)
-    .slice(randomNumber , randomNumber+2); // +2 because on the page we are showing 2 card only
+    .slice(randomNumber, randomNumber + 5); // +5 because on the page we are showing 5 card only
 
   console.log("similarMovies:", similarMovies);
 
-  
+
   return (
     <div className="details-page">
       <div className="show-details">
