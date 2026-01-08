@@ -1,13 +1,12 @@
 import { IoSearchSharp } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
 const Navbar = ({ movie, setMovie, handleSearch, favourite }) => {
-  
-  const navigate =  useNavigate();
+  const navigate = useNavigate();
 
   const showFavourite = () => {
-    navigate("/favourite_movies")
+    navigate("/favourite_movies");
     console.log(favourite);
   };
 
@@ -15,7 +14,9 @@ const Navbar = ({ movie, setMovie, handleSearch, favourite }) => {
     <div>
       <nav>
         <div className="logo">
-          <h1>Dekho Movie</h1>
+          <NavLink to={"/"}>
+            <h1>Dekho Movie</h1>
+          </NavLink>
         </div>
 
         <div className="search">
