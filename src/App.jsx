@@ -24,7 +24,7 @@ const App = () => {
   const handleSearch = async (movie, e) => {
     e.preventDefault();
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&s=${movie}`
+      `https://www.omdbapi.com/?apikey=${API_KEY}&s=${movie}`
     );
     const movieData = await response.json();
     console.log(movieData);
