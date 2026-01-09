@@ -78,6 +78,7 @@ npm run dev
 - User reviews and ratings
 - Advanced search filters
 - Watch later list
+- Register & Login
 
 ## 👨‍💻 Author
 
